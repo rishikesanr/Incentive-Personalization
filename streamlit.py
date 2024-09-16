@@ -96,7 +96,7 @@ elif menu == "Workspaces":
     workspace_type = st.selectbox("Select Workspace Type", 
                                   ("Attract New Customers", "Attract All Customers"))
 
-    if workspace_name and workspace_type and data_model_name:
+    if workspace_name and workspace_type and data_model_name_training:
         # Workspace details remain visible on the same page
         st.subheader(f"Workspace: {workspace_name} ({workspace_type})")
         st.write(f"Data Model Selected: {data_model_name}")
