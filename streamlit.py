@@ -127,7 +127,7 @@ elif menu == "Workspaces":
             
             # If "%" is selected for customer incentive
             if customer_incentive == "%":
-                st.write("#### Optimization Constraints:")
+                st.write("### Optimization Constraints:")
                 
                 # Percentage of users who receive coupons
                 percent_coupons = st.slider("% of users who receive coupons", 0, 100, 50)
