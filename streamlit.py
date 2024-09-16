@@ -89,7 +89,8 @@ elif menu == "Workspaces":
 
     # Input for Workspace Name and Data Model
     workspace_name = st.text_input("Enter Workspace Name")
-    data_model_name = st.text_input("Enter Data Model Name")
+    data_model_name_training = st.text_input("Enter Data Model for Training")
+    data_model_name_inference = st.text_input("Enter Data Model for Inference")
 
     # Workspace creation options
     workspace_type = st.selectbox("Select Workspace Type", 
