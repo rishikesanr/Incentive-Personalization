@@ -98,7 +98,7 @@ elif menu == "Workspaces":
 
     if workspace_name and workspace_type and data_model_name_training:
         # Workspace details remain visible on the same page
-        st.subheader(f"Workspace: {workspace_name} ({workspace_type})")
+        st.subheader(f"Campaign: {workspace_name} ({workspace_type})")
 
         if workspace_type == "Attract New Customers":
             st.write("Attract new customers who never placed an order before. Maximize CVR under budget!")
@@ -107,37 +107,40 @@ elif menu == "Workspaces":
             st.write("Improve frequency from new and return customers. Optimize CVR, Revenue, and Profits under budget!")
             
             # Options for Customer Incentive
-            st.write("### Customer Incentive:")
+            st.write("### Training Configuration:")
             customer_incentive = st.selectbox("Choose an incentive", 
                                           ("%", "Dollar Off", "Free Delivery"))
-            
-            # Options for Campaign Length
-            st.write("### Campaign Length:")
+            if customer_incentive == "%":
+                st.write("### Additional Options:")
+                # Coupon strategy selection
+                coupon_strategy = st.selectbox("Coupon Strategy", ("Custom", "Auto"))
+                
+                # If Custom is selected, allow entering custom coupons
+                if coupon_strategy == "Custom":
+                    custom_coupons = st.text_input("Enter coupon values (e.g., 0%, 10%, 15%)")
+                    st.write(f"Selected Custom Coupons: {custom_coupons}%")
+                  
+            st.write("### Inferece Configuration:")
+            campaign_freq = st.selectbox("Choose campaign frequency", 
+                                           ("Hourly", "Daily", "Weekly"))
             campaign_length = st.selectbox("Choose campaign length", 
-                                           ("1 week", "1 month", "6 months", "1 year", "Auto"))
+                                           ("1 month", "6 months", "1 year", "Auto"))
             
             # If "%" is selected for customer incentive
             if customer_incentive == "%":
-                st.write("### Additional Options:")
+                st.write("### Optimization Constraints:")
                 
                 # Percentage of users who receive coupons
                 percent_coupons = st.slider("% of users who receive coupons", 0, 100, 50)
                 st.write(f"Selected: {percent_coupons}% of users will receive coupons.")
                 
-                # Coupon strategy selection
-                coupon_strategy = st.radio("Coupon Strategy", ("Custom", "Auto"))
-                
-                # If Custom is selected, allow entering custom coupons
-                if coupon_strategy == "Custom":
-                    custom_coupons = st.text_input("Enter coupon values (e.g., 0%, 10%, 15%)")
-                    st.write(f"Selected Custom Coupons: {custom_coupons}")
             
             # If "Dollar Off" is selected for customer incentive
             elif customer_incentive == "Dollar Off":
                 st.write("### Additional Options:")
                 
                 # Weekly budget option: Enter a value or choose no cap
-                weekly_budget_option = st.radio("Average Weekly Budget", 
+                weekly_budget_option = st.selectbox("Average Weekly Budget", 
                                                 ("Enter a number", "No cap on average weekly budget"))
                 
                 # If "Enter a number" is selected, allow entering the weekly budget value
