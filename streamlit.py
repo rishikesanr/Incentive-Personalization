@@ -111,7 +111,6 @@ elif menu == "Workspaces":
             customer_incentive = st.selectbox("Choose an incentive", 
                                           ("%", "Dollar Off", "Free Delivery"))
             if customer_incentive == "%":
-                st.write("### Additional Options:")
                 # Coupon strategy selection
                 coupon_strategy = st.selectbox("Coupon Strategy", ("Custom", "Auto"))
                 
@@ -128,7 +127,7 @@ elif menu == "Workspaces":
             
             # If "%" is selected for customer incentive
             if customer_incentive == "%":
-                st.write("### Optimization Constraints:")
+                st.write("#### Optimization Constraints:")
                 
                 # Percentage of users who receive coupons
                 percent_coupons = st.slider("% of users who receive coupons", 0, 100, 50)
@@ -137,7 +136,6 @@ elif menu == "Workspaces":
             
             # If "Dollar Off" is selected for customer incentive
             elif customer_incentive == "Dollar Off":
-                st.write("### Additional Options:")
                 
                 # Weekly budget option: Enter a value or choose no cap
                 weekly_budget_option = st.selectbox("Average Weekly Budget", 
