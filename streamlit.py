@@ -88,7 +88,7 @@ elif menu == "Workspaces":
     st.header("Workspaces")
 
     # Input for Workspace Name and Data Model
-    workspace_name = st.text_input("Enter Workspace Name")
+    workspace_name = st.text_input("Enter Campaign Name")
     data_model_name_training = st.text_input("Enter Data Model for Training")
     data_model_name_inference = st.text_input("Enter Data Model for Inference")
 
@@ -99,7 +99,6 @@ elif menu == "Workspaces":
     if workspace_name and workspace_type and data_model_name_training:
         # Workspace details remain visible on the same page
         st.subheader(f"Workspace: {workspace_name} ({workspace_type})")
-        st.write(f"Data Model Selected: {data_model_name}")
 
         if workspace_type == "Attract New Customers":
             st.write("Attract new customers who never placed an order before. Maximize CVR under budget!")
@@ -109,7 +108,7 @@ elif menu == "Workspaces":
             
             # Options for Customer Incentive
             st.write("### Customer Incentive:")
-            customer_incentive = st.radio("Choose an incentive", 
+            customer_incentive = st.selectbox("Choose an incentive", 
                                           ("%", "Dollar Off", "Free Delivery"))
             
             # Options for Campaign Length
