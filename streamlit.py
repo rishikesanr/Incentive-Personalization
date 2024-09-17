@@ -119,7 +119,7 @@ elif menu == "Workspaces":
                     custom_coupons = st.text_input("Enter coupon values (e.g., 0%, 10%, 15%)")
                     st.write(f"Selected Custom Coupons: {custom_coupons}%")
                   
-            st.write("### Inferece Configuration:")
+            st.write("### Inference Configuration:")
             campaign_freq = st.selectbox("Choose campaign frequency", 
                                            ("Hourly", "Daily", "Weekly"))
             campaign_length = st.selectbox("Choose campaign length", 
