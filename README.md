@@ -3,6 +3,7 @@
 Personalize and send coupons to users who abandon online carts.
 
 ### 1:1 Personalization 
+- Performed statistical testing (Chi-Sqaure, ANOVA) from the experimental data 
 - Predictive models (Logistic, XGBoost)
 - Customer Segmentation (Predictive models + Business Rules)
 - Optimization to drive key pirate metrics: CVR, Revenue, and incremental profits
