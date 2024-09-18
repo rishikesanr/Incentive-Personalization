@@ -9,4 +9,4 @@ Personalize and send coupons to users who abandon online carts.
 - 8.71% lift in CVR after personalization from baseline 10% customer strategy
 
 ### A conceptual prototype
-https://monocle-demo-promotion.streamlit.app/
+https://personalization-campaign-platform.streamlit.app/
